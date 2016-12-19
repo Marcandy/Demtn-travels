@@ -19,10 +19,12 @@ angular.module('devmtnTravel', ['ui.router'])
             })
             .state('adventurers',{
                 url:'/adventurers/',
+                parent: 'home',
                 templateUrl: "../views/adventurers.html"
             })
             .state('contact',{
                 url:'/contact',
+                parent: 'home',
                 templateUrl: "../views/contact.html"
             })
 
