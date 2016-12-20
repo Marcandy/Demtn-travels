@@ -6,7 +6,7 @@ angular.module('devmtnTravel')
 
     $scope.findPackage = function(id) {
       for (var i = 0; i < $scope.data.length; i++) {
-        if ($scope.data[i].id == id) { //stateParams return a string id so we need to convert it to number
+        if ($scope.data[i].id === Number(id)) { //stateParams return a string id so we need to convert it to number
           return $scope.data[i];
         }
       }
