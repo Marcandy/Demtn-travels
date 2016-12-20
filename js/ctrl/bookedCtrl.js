@@ -1,18 +1,18 @@
 angular.module('devmtnTravel')
   .controller('bookedCtrl', function ($scope, mainSrv, $stateParams) {
 
-    var data = mainSrv.travelInfo;
-    var id = $stateParams.id;
+    $scope.data = mainSrv.travelInfo;
+    // var id = $stateParams.id;
 
-    function findPackage() {
-      for (var i = 0; i < data.length; i++) {
-        if (data[i][id] === id) {
-          console.log(data[i]);
-            return data[i];
+    $scope.findPackage = function(id) {
+      for (var i = 0; i < $scope.data.length; i++) {
+        if ($scope.data[i].id == id) { //stateParams return a string id so we need to convert it to number
+          return $scope.data[i];
         }
       }
 
     }
-    $scope.package = findPackage();
+    $scope.booked = $scope.findPackage($stateParams.id);
+
 
   })
